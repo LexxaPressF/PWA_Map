@@ -19,7 +19,7 @@ const store = createStore({
     },
     getters: {
         getLastPoint: state => state.lastPoint,
-        getlistOfPoints: state => state.listOfPoints
+        getListOfPoints: state => state.listOfPoints
     }
 });
 

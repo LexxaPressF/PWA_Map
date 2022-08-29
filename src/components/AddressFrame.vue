@@ -26,4 +26,9 @@
 .wrapper{
 padding: 16px;
 }
+
+.data{
+    height: 110px;
+    overflow-y: auto;
+}
 </style>

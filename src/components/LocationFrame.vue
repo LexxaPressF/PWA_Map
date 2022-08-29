@@ -6,10 +6,20 @@
                     <template v-slot:data> {{address.road}}, дом {{address.house_number}}</template>
                 </address-frame>
                 <button @click="fetchAddress"><h4>Получить адресс</h4></button>
-                <address-frame>
-                    <template v-slot:name> Последняя отмеченная точка </template>
-                    <template v-slot:data> {{lastPoint.road}}, дом {{lastPoint.house_number}}</template>
+                <div class="points">
+                    <address-frame>
+                        <template v-slot:name> Последняя отмеченная точка </template>
+                        <template v-slot:data> {{lastPoint.road}}, дом {{lastPoint.house_number}}</template>
+                    </address-frame>
+                    <address-frame>
+                        <template v-slot:name> Список ваших точек </template>
+                        <template v-slot:data>
+                            <div v-for="point in listOfPoints" :key="listOfPoints.indexOf(point)" >
+                            {{point.road}}, {{point.house_number}}
+                            </div>
+                        </template>
                 </address-frame>
+                </div>
         </div>
     </div>
 </template>
@@ -31,7 +41,8 @@
         },
         computed: {
             ...mapGetters({
-                lastPoint: 'getLastPoint'
+                lastPoint: 'getLastPoint',
+                listOfPoints: 'getListOfPoints'
             }),
         },
         methods: {
@@ -71,6 +82,12 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+}
+
+.points{
+    display: flex;
+    flex-direction: row;
+    gap:50px;
 }
 
 button {
