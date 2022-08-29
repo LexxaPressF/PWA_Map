@@ -9,14 +9,17 @@ const store = createStore({
     },
     mutations: {
         addNewPoint(state, data){
-            state.point = data
+            state.lastPoint = data
+            state.listOfPoints.push(data)
         }
     },
     state: {
-        point: {}
+        lastPoint: {},
+        listOfPoints: []
     },
     getters: {
-        getPoint: state => state.point
+        getLastPoint: state => state.lastPoint,
+        getlistOfPoints: state => state.listOfPoints
     }
 });
 
