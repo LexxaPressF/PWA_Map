@@ -1,7 +1,12 @@
 <template>
     <div class="map">
-        <div class='wrapper'>
-            <div id="mapContainer"/>
+        <div class="wrapper">
+            <apple-card>
+                <template v-slot:cardName> Карта </template>
+                <template v-slot:content>
+                    <div id="mapContainer"/>
+                </template>
+            </apple-card>
         </div>
     </div>
 </template>
@@ -10,10 +15,12 @@
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import {addressByCoordinates} from "../services/location";
+import AppleCard from "@/Cards/AppleCard";
 
 
     export default {
         name: "MapFrame",
+        components: {AppleCard},
         data (){
             return{
                 map: {},
@@ -52,26 +59,27 @@ import {addressByCoordinates} from "../services/location";
 <style scoped>
 
  .map{
-     grid-column: 1;
-     grid-row: 2;
-     margin: 5px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 100%;
+     height: 100%;
  }
 
 
  #mapContainer {
      width: 96%;
-     height: 96%;
+     height: 98%;
  }
 
 .wrapper{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 30px;
-    background: #e0e0e0;
-    box-shadow: 15px 15px 30px #bebebe,
-    -15px -15px 30px #ffffff;
-    width: 100%;
-    height: 100%;
+    width: 97%;
+    height: 97%;
 }
+
+ @media screen and (max-width: 1235px){
+     .map {
+         /*flex-grow: 2;*/
+     }
+ }
 </style>

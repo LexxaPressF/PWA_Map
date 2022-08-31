@@ -1,9 +1,7 @@
 <template>
-  <div id="app">
-    <header/>
+  <div id="body">
     <map-frame/>
     <location-frame/>
-    <footer/>
   </div>
 </template>
 
@@ -27,19 +25,25 @@ export default {
     box-sizing: border-box;
   }
 
-#app {
+#body {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
 
-  background: #e6e6e6;
+  background: linear-gradient(135deg, #ebadb6 0%, #aceae1 100%);
   width: 100vw;
   height: 100vh;
 
-  display: grid;
-  grid-template-columns: 700px auto;
-  grid-template-rows: 150px auto 150px;
+  display: flex;
+  flex-direction: row;
 }
+
+@media screen and (max-width: 1235px){
+ #body{
+   flex-direction: column;
+ }
+}  
+  
 </style>

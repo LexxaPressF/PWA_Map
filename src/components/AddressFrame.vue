@@ -14,6 +14,7 @@
 </script>
 
 <style scoped>
+
 .address{
     width: 220px;
     height: 254px;
@@ -24,11 +25,25 @@
 }
 
 .wrapper{
-padding: 16px;
+    height: 100%;
+    padding: 16px;
 }
 
 .data{
-    height: 110px;
+    height: 100%;
+    width:auto;
     overflow-y: auto;
 }
+
+@media screen and (max-width: 1235px){
+    .address{
+        height: auto;
+        width:auto;
+    }
+    h1 {
+        font-size: 1.3rem;
+    }
+}
+
+
 </style>
