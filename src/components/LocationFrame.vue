@@ -5,7 +5,7 @@
                 <apple-card class="card">
                     <template v-slot:cardName> Домашний адресс </template>
                     <template v-slot:content>
-                        {{address.road}}, дом {{address.house_number}}
+                        {{address.road}} {{address.house_number}}
                     </template>
                 </apple-card>
                 <button @click="fetchAddress">Где Я?</button>
@@ -14,14 +14,14 @@
                 <apple-card class="card">
                     <template v-slot:cardName> Последняя точка </template>
                     <template v-slot:content>
-                        {{lastPoint.road}}, дом {{lastPoint.house_number}}
+                        {{lastPoint.road}} {{lastPoint.house_number}}
                     </template>
                 </apple-card>
                 <apple-card class="card">
                     <template v-slot:cardName> Все точки </template>
                     <template v-slot:content>
                         <p v-for="point in listOfPoints" :key="listOfPoints.indexOf(point)">
-                            {{point.road}}, {{point.house_number}}
+                            {{point.road}} {{point.house_number}}
                         </p>
                     </template>
                 </apple-card>
@@ -104,7 +104,7 @@
 }
 
 button {
-    width: 200px;
+    width: 260px;
     height: 60px;
     padding: 17px 40px;
     border-radius: 28px;
@@ -129,9 +129,7 @@ button:hover {
 
 button:active {
     letter-spacing: 3px;
-    background-color: hsl(261deg 80% 48%);
-    color: hsl(0, 0%, 100%);
-    box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+    box-shadow: rgb(235, 173, 182) 0px 0px 0px 0px;
     transform: translateY(10px);
     transition: 100ms;
 }

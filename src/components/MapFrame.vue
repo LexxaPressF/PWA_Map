@@ -31,9 +31,9 @@ import AppleCard from "@/Cards/AppleCard";
             initMap: function () {
                 const mapDiv = L.map('mapContainer').setView(this.center,13)
                 this.map = mapDiv
-                L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
+                L.tileLayer('https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png',
                     {
-                    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                    attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
                 }).addTo(this.map);
                 this.map.on('click', this.mapClick)
             },
